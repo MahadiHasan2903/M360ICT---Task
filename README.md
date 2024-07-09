@@ -1,6 +1,8 @@
-# Overview
+# M360ICT - Task
 
-The "M360ICT - Task" project is a task given by M360ICT as part of NodeJS developer assesment
+## Overview
+
+The "M360ICT - Task" project is a task given by M360ICT as part of the NodeJS developer assessment.
 
 ## Prerequisites
 
@@ -15,36 +17,39 @@ Before you begin, make sure you have the following installed on your system:
 Follow these steps to get your Node.js project up and running (Recommended):
 
 1. **Clone the repository:**
+
    ```bash
-    git clone https://github.com/MahadiHasan2903/M360ICT---Task.git
+   git clone https://github.com/MahadiHasan2903/M360ICT---Task.git
+
    ```
+
 2. **Navigate to the project directory:**
 
    ```bash
-    cd M360ICT---Task
+   cd M360ICT---Task
+
    ```
 
 3. **Before running the project, make sure to copy the environment file and provide the necessary information:**
-
-```bash
- cp .env.example .env
-```
-
+   ```bash
+   cp .env.example .env
+   ```
 4. **Install dependencies:**
 
    ```bash
-    npm install
+   npm install
    ```
 
 5. **Start the development server:**
 
    ```bash
-    npm run server
+   npm run server
    ```
 
-6. **Open your browser and visit:**
-   ```
-    http://localhost:8080
+6. **Open you browser to visit:**
+
+   ```bash
+   http://localhost:8080
    ```
 
 ## Running with Docker
@@ -61,18 +66,10 @@ If you prefer to run the project in a Docker container, follow these steps (Opti
 2. **Build the Docker image:**
 
    ```bash
-   docker build -t server-app .
+   docker-compose --env-file .env up --build
    ```
 
-   <sub>Note: To see the build logs add `--progress=plain`</subb>
-
-3. **Run the Docker container:**
-
-   ```bash
-   docker run -p 8080:8080 server-app
-   ```
-
-4. **Open your browser and visit:**
+3. **Open your browser and visit:**
    ```
    http://localhost:8080
    ```
@@ -85,7 +82,7 @@ Note: If you need support for development mode using Docker, please contact the 
 
 ## Support
 
-If you encounter any issues or have any questions, feel free to reach out to the project maintainers or open an issue.
+If you encounter any issues or have any questions, feel free to reach out to the project maintainer or open an issue.
 
 ## License
 
