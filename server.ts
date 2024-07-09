@@ -8,6 +8,7 @@ import authorsRouter from "./routes/authorsRoutes";
 import booksRouter from "./routes/booksRoutes";
 import authorBooksRouter from "./routes/authorBooksRoutes";
 import viewsRoutes from "./routes/viewsRoutes";
+import authRoutes from "./routes/authRoutes";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use("/api/v1/authors", authorsRouter);
 app.use("/api/v1/books", booksRouter);
 app.use("/api/v1/query", authorBooksRouter);
 app.use("/api/v1/views", viewsRoutes);
+app.use("/api/v1/auth", authRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello world from backend server!");

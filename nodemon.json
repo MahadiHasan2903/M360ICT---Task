@@ -1,7 +1,6 @@
 {
-    "watch": ["server.ts", "controllers", "routes", "config"],
-    "ext": "ts",
-    "ignore": ["dist"],
-    "exec": "ts-node ./server.ts"
-  }
-  
+  "watch": ["."],
+  "ext": "ts",
+  "ignore": ["dist"],
+  "exec": "ts-node ./server.ts"
+}

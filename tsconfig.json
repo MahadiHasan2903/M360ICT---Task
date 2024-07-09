@@ -7,5 +7,6 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["server.ts", "controllers/**/*", "routes/**/*", "config/**/*"]
+  "include": ["**/*.ts","**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
 }
