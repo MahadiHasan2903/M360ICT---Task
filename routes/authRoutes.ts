@@ -2,7 +2,7 @@
 
 import { Router } from "express";
 import * as authController from "../controllers/authController";
-import { authenticateTokenAndRole } from "../middlewares/authentication";
+import { authMiddleware } from "../middlewares/authMiddleware";
 
 const router = Router();
 
@@ -10,7 +10,7 @@ router.post("/register", authController.registrationController);
 router.post("/login", authController.loginController);
 router.post(
   "/logout",
-  authenticateTokenAndRole(["user", "admin"]),
+  authMiddleware(["user", "admin"]),
   authController.logoutController
 );
 

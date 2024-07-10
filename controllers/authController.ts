@@ -69,7 +69,6 @@ export async function loginController(req: Request, res: Response) {
       }
     );
 
-    console.log(token);
     res.json({
       status: true,
       message: "Login successful",

@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken";
 
 // Middleware to verify JWT token and role
-export function authenticateTokenAndRole(roles: string | string[]) {
+export function authMiddleware(roles: string | string[]) {
   return function (req: Request, res: Response, next: NextFunction) {
     // Get the JWT token from headers
     const authHeader = req.headers["authorization"];
@@ -22,9 +22,10 @@ export function authenticateTokenAndRole(roles: string | string[]) {
       process.env.JWT_SECRET_KEY as string,
       (err: any, decoded: any) => {
         if (err) {
+          console.error("JWT verification error:", err);
           return res.status(403).json({
             status: false,
-            message: "Unauthorized: User not logged in",
+            message: "Unauthorized: Invalid token",
             data: {},
           });
         }
@@ -34,6 +35,7 @@ export function authenticateTokenAndRole(roles: string | string[]) {
           req.body.decodedToken = decoded as JwtPayload;
           next();
         } else {
+          console.error("Access denied: Insufficient role permissions");
           return res.status(403).json({
             status: false,
             message: "Forbidden resources: Insufficient role permissions",
